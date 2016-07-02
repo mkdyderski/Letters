@@ -1,7 +1,6 @@
 ## script for producing 
 # devtools::install_github("jennybc/googlesheets")
 library(googlesheets)
-#library(readxl)
 library(knitr)
 library(dplyr)
 library(stringi)
@@ -9,8 +8,8 @@ library(lubridate)
 
 # read data ---------------------------------------------------------------
 
-
-dir.create('template/mails')
+ 
+dir.create('template/mails') ## invisible at github
 setwd('template/mails')
 
 my_sheets <- gs_ls() 
