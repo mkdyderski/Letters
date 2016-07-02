@@ -137,7 +137,7 @@
 \begin{letter} 
 {\Sexpr{name} \Sexpr{surname}\\ 
 \Sexpr{inst} \\
-\Sexpr{city} \\ 
+\Sexpr{city}, \Sexpr{country} \\ 
 \Sexpr{mail} \\ 
 }
 
