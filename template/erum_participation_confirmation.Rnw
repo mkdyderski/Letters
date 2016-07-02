@@ -21,56 +21,7 @@
 
 
 
-\documentclass[11pt,a4paper]{letter}\usepackage[]{graphicx}\usepackage[]{color}
-%% maxwidth is the original width if it is less than linewidth
-%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
-\makeatletter
-\def\maxwidth{ %
-  \ifdim\Gin@nat@width>\linewidth
-    \linewidth
-  \else
-    \Gin@nat@width
-  \fi
-}
-\makeatother
-
-\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
-\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
-\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
-\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
-\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
-\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
-\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
-\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
-
-\usepackage{framed}
-\makeatletter
-\newenvironment{kframe}{%
- \def\at@end@of@kframe{}%
- \ifinner\ifhmode%
-  \def\at@end@of@kframe{\end{minipage}}%
-  \begin{minipage}{\columnwidth}%
- \fi\fi%
- \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
- \colorbox{shadecolor}{##1}\hskip-\fboxsep
-     % There is no \\@totalrightmargin, so:
-     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
- \MakeFramed {\advance\hsize-\width
-   \@totalleftmargin\z@ \linewidth\hsize
-   \@setminipage}}%
- {\par\unskip\endMakeFramed%
- \at@end@of@kframe}
-\makeatother
-
-\definecolor{shadecolor}{rgb}{.97, .97, .97}
-\definecolor{messagecolor}{rgb}{0, 0, 0}
-\definecolor{warningcolor}{rgb}{1, 0, 1}
-\definecolor{errorcolor}{rgb}{1, 0, 0}
-\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
-
-\usepackage{alltt} % Specify the font size (10pt, 11pt and 12pt) and paper size (letterpaper, a4paper, etc)
+\documentclass[11pt,a4paper]{letter} % Specify the font size (10pt, 11pt and 12pt) and paper size (letterpaper, a4paper, etc)
 
 \usepackage{graphicx} % Required for including pictures
 \usepackage{microtype} % Improves typography
@@ -176,7 +127,7 @@
 \vskip 0.5in} % Print your name and title
 
 %----------------------------------------------------------------------------------------
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+
 \begin{document}
 
 %----------------------------------------------------------------------------------------
@@ -184,10 +135,10 @@
 %----------------------------------------------------------------------------------------
 
 \begin{letter} 
-{Name Surname\\ 
-Inst \\
-City \\ 
-mail@mail.com \\ 
+{\Sexpr{name} \Sexpr{surname}\\ 
+\Sexpr{inst} \\
+\Sexpr{city} \\ 
+\Sexpr{mail} \\ 
 }
 
 %----------------------------------------------------------------------------------------
@@ -196,24 +147,23 @@ mail@mail.com \\
 
 \opening{Dear Sir/ Madam,}
 
-The eRum 2016 Organizing Committee is pleased to inform you that your paper \textbf{PRES TITLE PRES TITLE } has been selected for the eRum 2016 Conference. The organizing committee have decided that your paper have been selected as \textbf{TYPE}. 
+The eRum 2016 Organizing Committee is pleased to inform you that your paper \textbf{\Sexpr{pres_title}} has been selected for the eRum 2016 Conference. The organizing committee have decided that your paper have been selected as \textbf{\Sexpr{type}}. The conference program is now being prepared and will be published on the conference webpage in the begining of September. 
 
-\noindent Registration and workshop fee should be paid by bank transfer to \textbf{JUNE 15, 2016}:
+\noindent Registration fee of 100 PLN / 20 EUR should be paid by bank transfer to the \textbf{JUNE 15, 2016}. Details of are provided below.
 
 \begin{itemize}
 \itemsep0pt
-\item Holder: Poznan University of Economics and Business 
-\item Bank: Bank Zachodni WBK 
-\item Address: Powstancow Wielkopolskich 16, 61-895 Poznan, Poland 
-\item IBAN: PL17 1090 1476 0000 0001 3238 7720 
-\item SWIFT: WBKPPLPP 
-\item Transfer title: "Workshop/registration\_fee\_eRum\_name of participant"
+\item \textbf{Holder}: Poznan University of Economics and Business 
+\item \textbf{Bank}: Bank Zachodni WBK 
+\item \textbf{Address}: Powstancow Wielkopolskich 16, 61-895 Poznan, Poland 
+\item \textbf{IBAN}: PL17 1090 1476 0000 0001 3238 7720 
+\item \textbf{SWIFT}: WBKPPLPP 
+\item \textbf{Transfer title}: "Fee for \Sexpr{name} \Sexpr{surname} (\Sexpr{inst})"
 \end{itemize}
 
+If the conference fee will be covered by the your institution or/and you need an invoice please send the following details: name, address, tax payer number and for whom the payment will be made, to the conference e-mail. 
+
 We thank you in advance for your co-operation and remain at your disposal should you require any further information. Questions on registration, accommodation etc. should be mailed to the Conference office mailbox erum@konf.ue.poznan.pl. 
-
-If you the conference fee will be covered by the company or you need an invoice please send all the details of the conference...
-
 
 \closing{Sincerely,}
 
