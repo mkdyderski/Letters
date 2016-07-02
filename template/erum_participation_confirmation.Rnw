@@ -51,6 +51,7 @@
 \topmargin -1in
 \longindentation 0.50\textwidth
 \parindent 0.4in
+\usepackage[margin=2cm]{geometry}
 
 %----------------------------------------------------------------------------------------
 %	SENDER INFORMATION

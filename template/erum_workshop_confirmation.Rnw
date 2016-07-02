@@ -51,6 +51,7 @@
 \topmargin -1in
 \longindentation 0.50\textwidth
 \parindent 0.4in
+\usepackage[margin=2cm]{geometry}
 
 %----------------------------------------------------------------------------------------
 %	SENDER INFORMATION
@@ -140,8 +141,8 @@
 
 \begin{letter} 
 {\Sexpr{name} \Sexpr{surname}\\ 
-\Sexpr{inst} \\
-\Sexpr{city}, \Sexpr{country} \\ 
+\Sexpr{gsub("&", "\\\\&", inst)} \\
+%\Sexpr{city}, \Sexpr{country} \\ 
 \Sexpr{gsub("_", "\\\\_", mail)} \\ 
 }
 
@@ -156,10 +157,20 @@ The eRum 2016 Organizing Committee is pleased to inform you have registered for 
 \begin{itemize}
 <<d, results="asis", echo=FALSE>>=
 if (w == 1) {
-  cat('\\item')
+  cat('\\item ', work_time[1],": ")
+    cat('\\begin{itemize}')
+    cat('\\item ', work_names[1], ' -- status: on ',work_status[1], '\n')
+    cat('\\end{itemize}')
 } else {
-  cat('\\item')
-  cat('\\item')
+  cat('\\item ', work_time[1],": ")
+    cat('\\begin{itemize}')
+    cat('\\item ', work_names[1], ' -- status: on ',work_status[1], '\n')
+    cat('\\end{itemize}')
+  
+  cat('\\item ', work_time[2],": ")
+    cat('\\begin{itemize}')
+    cat('\\item ', work_names[2], ' -- status: on ',work_status[2], '\n')
+    cat('\\end{itemize}')
 }
 @
 \end{itemize}
