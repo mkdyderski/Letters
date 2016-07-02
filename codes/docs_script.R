@@ -73,19 +73,16 @@ workshp <- erum %>%
   gs_read(ws = 'Workshops_conf', col_names = TRUE) %>%
   mutate(status = ifelse(lp >= 26,
                          paste0('a reserve list (place ',lp,'/25)'),
-                         'a regular list')) %>%
+                         'a regular list'),
+         workshp = gsub('[[:blank:]]','',workshp)) %>%
   filter(!grepl('sponsor',name,ignore.case=T)) %>%
   group_by(name,surname,mail) %>%
   do(df = data.frame(.))
 
 
-
-data_input <- register_presentation
+data_input <- workshp
 
 for (i in nrow(workshp)) {
-  
-  w <- 1
-  work_fee <- ifelse(w == 1,'200 PLN / 50 EUR', '400 PLN / 100 EUR')
   
   
   name <- stri_trans_totitle(data_input$name[i])
@@ -96,8 +93,12 @@ for (i in nrow(workshp)) {
   city <- ifelse(city == 'Poznań','Poznan',city)
   country <- stri_trans_totitle(data_input$country[i])
   mail <- data_input$email[i]
-  pres_title <- stri_trans_toupper(data_input$title[i])
-  type <- stri_trans_toupper(data_input$how[i])
+  
+  w <- nrow(data_input$df[[i]]) 
+  work_fee <- ifelse(w == 1,'200 PLN / 50 EUR', '400 PLN / 100 EUR')
+  work_names <- gsub('\t','',stri_trans_totitle(data_input$df[[i]]$workshp))
+  work_time <- stri_trans_totitle(data_input$df[[i]]$when)
+  work_status <- stri_trans_totitle(data_input$df[[i]]$status)
   
   
   knit2pdf(input = '../erum_workshop_confirmation.rnw',

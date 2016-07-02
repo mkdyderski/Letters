@@ -156,10 +156,10 @@ The eRum 2016 Organizing Committee is pleased to inform you have registered for 
 \begin{itemize}
 <<d, results="asis", echo=FALSE>>=
 if (w == 1) {
-  cat('\\item d')
+  cat('\\item')
 } else {
-  cat('\\item d')
-  cat('\\item d')
+  cat('\\item')
+  cat('\\item')
 }
 @
 \end{itemize}
