@@ -19,9 +19,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-
-
-\documentclass[11pt,a4paper]{letter} % Specify the font size (10pt, 11pt and 12pt) and paper size (letterpaper, a4paper, etc)
+\documentclass[10pt,a4paper]{letter} % Specify the font size (10pt, 11pt and 12pt) and paper size (letterpaper, a4paper, etc)
 
 \usepackage{graphicx} % Required for including pictures
 \usepackage{microtype} % Improves typography
@@ -36,6 +34,12 @@
 \def\vhrulefill#1{\leavevmode\leaders\hrule\@height#1\hfill \kern\z@}
 \makeatother
 
+
+\usepackage[pdftex,
+            pdfauthor={\Sexpr{name} \Sexpr{surname}},
+            pdftitle={EUROPEAN R USERS MEETING},
+            pdfsubject={\Sexpr{mail}}]{hyperref}
+            
 %----------------------------------------------------------------------------------------
 %	DOCUMENT MARGINS
 %----------------------------------------------------------------------------------------
@@ -101,7 +105,7 @@
 {\centering\fromaddress \vspace{0.6in} \\ % Print the header and from address here, add whitespace to move date down
 \hspace*{\longindentation}July 4, 2016\hspace*{\fill}\par} % Print today's date, remove \today to not display it
 {\raggedright \toname \\ \toaddress \par} % Print the to name and address
-\vspace{0.4in} % White space after the to address
+\vspace{0.3in} % White space after the to address
 \noindent #1 % Print the opening line
 % Uncomment the 4 lines below to print a footnote with custom text
 %\def\thefootnote{}
@@ -117,14 +121,14 @@
 \signature{\Who \What} % The signature is a combination of your name and title
 
 \long\def\closing#1{
-\vspace{0.1in} % Some whitespace after the letter content and before the signature
+\vspace{0.2in} % Some whitespace after the letter content and before the signature
 \noindent % Stop paragraph indentation
 \hspace*{\longindentation} % Move the signature right
 \parbox{\indentedwidth}{\raggedright
 #1 % Print the signature text
-\vskip 0.5in % Whitespace between the signature text and your name
+\vskip 0.2in % Whitespace between the signature text and your name
 \fromsig}
-\vskip 0.5in} % Print your name and title
+\vskip 0.2in} % Print your name and title
 
 %----------------------------------------------------------------------------------------
 
@@ -138,7 +142,7 @@
 {\Sexpr{name} \Sexpr{surname}\\ 
 \Sexpr{inst} \\
 \Sexpr{city}, \Sexpr{country} \\ 
-\Sexpr{mail} \\ 
+\Sexpr{gsub("_", "\\\\_", mail)} \\ 
 }
 
 %----------------------------------------------------------------------------------------
@@ -147,24 +151,37 @@
 
 \opening{Dear Sir/ Madam,}
 
-The eRum 2016 Organizing Committee is pleased to inform you that your paper \textbf{\Sexpr{pres_title}} has been selected for the eRum 2016 Conference. The organizing committee have decided that your paper have been selected as \textbf{\Sexpr{type}}. 
+The eRum 2016 Organizing Committee is pleased to inform you have registered for the following workshop/s:
 
-\noindent Registration and workshop fee should be paid by bank transfer to \textbf{JUNE 15, 2016}:
+\begin{itemize}
+<<d, results="asis", echo=FALSE>>=
+if (w == 1) {
+  cat('\\item d')
+} else {
+  cat('\\item d')
+  cat('\\item d')
+}
+@
+\end{itemize}
+
+
+\noindent The total workshop fee of \textbf{\Sexpr{work_fee}} should be paid by bank transfer to the \textbf{JUNE 15, 2016}. Please remember that the transfer \textit{should be done} to the deadline, otherwise your place at workshop will be given to the next person from a reserve list. 
+
+If you are on a reserve list please only pay for the workshop in which you are listed on a regular list. If you are in all workshops on a reserve list please wait for the information about free spaces. Details of the bank account are provided below.
 
 \begin{itemize}
 \itemsep0pt
-\item Holder: Poznan University of Economics and Business 
-\item Bank: Bank Zachodni WBK 
-\item Address: Powstancow Wielkopolskich 16, 61-895 Poznan, Poland 
-\item IBAN: PL17 1090 1476 0000 0001 3238 7720 
-\item SWIFT: WBKPPLPP 
-\item Transfer title: "Workshop/registration\_fee\_eRum\_name of participant"
+\item \textbf{Holder}: Poznan University of Economics and Business 
+\item \textbf{Bank}: Bank Zachodni WBK 
+\item \textbf{Address}: Powstancow Wielkopolskich 16, 61-895 Poznan, Poland 
+\item \textbf{IBAN}: PL17 1090 1476 0000 0001 3238 7720 
+\item \textbf{SWIFT}: WBKPPLPP 
+\item \textbf{Transfer title}: "Fee for \Sexpr{name} \Sexpr{surname}"
 \end{itemize}
 
+If the conference fee will be covered by the your institution or/and you need an invoice please send the following details: name, address, tax payer number and for whom the payment will be made, to the conference e-mail. 
+
 We thank you in advance for your co-operation and remain at your disposal should you require any further information. Questions on registration, accommodation etc. should be mailed to the Conference office mailbox erum@konf.ue.poznan.pl. 
-
-If you the conference fee will be covered by the company or you need an invoice please send all the details of the conference...
-
 
 \closing{Sincerely,}
 

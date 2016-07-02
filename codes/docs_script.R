@@ -69,8 +69,45 @@ for (i in 1:nrow(register_presentation)) {
 # workshop confirmation ---------------------------------------------------
 
 
-knit2pdf(input = '../erum_workshop_confirmation.rnw',
-         output = paste0(surname,'_workshop_confirmation.tex'))
+workshp <- erum %>% 
+  gs_read(ws = 'Workshops_conf', col_names = TRUE) %>%
+  mutate(status = ifelse(lp >= 26,
+                         paste0('a reserve list (place ',lp,'/25)'),
+                         'a regular list')) %>%
+  filter(!grepl('sponsor',name,ignore.case=T)) %>%
+  group_by(name,surname,mail) %>%
+  do(df = data.frame(.))
+
+
+
+data_input <- register_presentation
+
+for (i in nrow(workshp)) {
+  
+  w <- 1
+  work_fee <- ifelse(w == 1,'200 PLN / 50 EUR', '400 PLN / 100 EUR')
+  
+  
+  name <- stri_trans_totitle(data_input$name[i])
+  name <- gsub('[[:punct:]]','',name)
+  surname <- stri_trans_totitle(data_input$surname[i])
+  inst <- stri_trans_totitle(data_input$institute[i])
+  city <- stri_trans_totitle(data_input$city[i])
+  city <- ifelse(city == 'Poznań','Poznan',city)
+  country <- stri_trans_totitle(data_input$country[i])
+  mail <- data_input$email[i]
+  pres_title <- stri_trans_toupper(data_input$title[i])
+  type <- stri_trans_toupper(data_input$how[i])
+  
+  
+  knit2pdf(input = '../erum_workshop_confirmation.rnw',
+           output = paste0(gsub('\\s+','_',surname),'_',
+                           gsub('\\s+','_',name),'_erum_workshop_confirmation.tex'))
+  
+  junk <- dir(path=getwd(), pattern="*.(aux|log|out|tex)") 
+  file.remove(junk)
+}
+
 
 
 # conference conf without presentation  -----------------------------------
