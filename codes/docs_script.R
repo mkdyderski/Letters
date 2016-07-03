@@ -55,10 +55,12 @@ for (i in 1:nrow(register_presentation)) {
   pres_title <- stri_trans_toupper(data_input$title[i])
   type <- stri_trans_toupper(data_input$how[i])
   
+  fname <- paste0(gsub('\\s+','_',surname),'_',
+                  gsub('\\s+','_',name),'_erum_conference_confirmation.tex')
+  fname <- stri_trans_general(fname, "latin-ascii")
   
   knit2pdf(input = '../erum_conference_confirmation.rnw',
-           output = paste0(gsub('\\s+','_',surname),'_',
-                           gsub('\\s+','_',name),'_erum_conference_confirmation.tex'))
+           output = fname)
   junk <- dir(path=getwd(), pattern="*.(aux|log|out|tex)") 
   file.remove(junk)
 }
@@ -98,10 +100,12 @@ for (i in 1:nrow(data_input)) {
   work_time <- stri_trans_totitle(data_input$df[[i]]$when)
   work_status <- stri_trans_tolower(data_input$df[[i]]$status)
   
+  fname <- paste0(gsub('\\s+','_',surname),'_',
+                  gsub('\\s+','_',name),'_erum_workshop_confirmation.tex')
+  fname <- stri_trans_general(fname, "latin-ascii")
   
   knit2pdf(input = '../erum_workshop_confirmation.rnw',
-           output = paste0(gsub('\\s+','_',surname),'_',
-                           gsub('\\s+','_',name),'_erum_workshop_confirmation.tex'))
+           output = fname)
   
   junk <- dir(path=getwd(), pattern="*.(aux|log|out|tex)") 
   file.remove(junk)
@@ -131,12 +135,21 @@ for (i in 1:nrow(data_input)) {
   pres_title <- stri_trans_toupper(data_input$title[i])
   type <- stri_trans_toupper(data_input$how[i])
   
+  fname <- paste0(gsub('\\s+','_',surname),'_',
+                  gsub('\\s+','_',name),'_erum_participation_confirmation.tex')
+  fname <- stri_trans_general(fname, "latin-ascii")
+  
   knit2pdf(input = '../erum_participation_confirmation.Rnw',
-           output = paste0(gsub('\\s+','_',surname),'_',
-                           gsub('\\s+','_',name),'_erum_participation_confirmation.tex'))
+           output = fname)
   junk <- dir(path=getwd(), pattern="*.(aux|log|out|tex)") 
   file.remove(junk)
 }
+
+
+### files with emails and files
+
+#files <- list.files(pattern='*.pdf')
+# file.remove(files)
 
 
 
