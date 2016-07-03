@@ -14,7 +14,7 @@ w <- 2
 work_fee <- ifelse(w == 1,'200 PLN / 50 EUR', '400 PLN / 100 EUR')
 work_names <- c('workshop 1', 'workshop2')
 work_time <- c('morning', 'afternoon')
-work_status <- c('a reserve list', 'a regular list')
+work_status <- c('a reserve list (30/25)', 'a regular list')
 
 
 
