@@ -72,7 +72,7 @@ workshp <- erum %>%
   mutate(status = ifelse(lp >= 26,
                          paste0('a reserve list (place ',lp,'/25)'),
                          'a regular list'),
-         workshp = gsub('[[:blank:]]','',workshp)) %>%
+         workshp = stri_trim_both(workshp)) %>%
   filter(!grepl('sponsor',name,ignore.case=T)) %>%
   group_by(name,surname,mail) %>%
   do(df = data.frame(.))

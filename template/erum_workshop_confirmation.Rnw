@@ -159,26 +159,26 @@ The eRum 2016 Organizing Committee is pleased to inform you have registered for 
 if (w == 1) {
   cat('\\item ', work_time[1],": ")
     cat('\\begin{itemize}')
-    cat('\\item ', work_names[1], ' -- status: on ',work_status[1], '\n')
+    cat('\\item ', work_names[1], ' -- status: on \\textbf{',work_status[1], '}\n')
     cat('\\end{itemize}')
 } else {
   cat('\\item ', work_time[1],": ")
     cat('\\begin{itemize}')
-    cat('\\item ', work_names[1], ' -- status: on ',work_status[1], '\n')
+    cat('\\item ', work_names[1], ' -- status: on \\textbf{',work_status[1], '}\n')
     cat('\\end{itemize}')
   
   cat('\\item ', work_time[2],": ")
     cat('\\begin{itemize}')
-    cat('\\item ', work_names[2], ' -- status: on ',work_status[2], '\n')
+    cat('\\item ', work_names[2], ' -- status: on \\textbf{',work_status[2], '}\n')
     cat('\\end{itemize}')
 }
 @
 \end{itemize}
 
 
-\noindent The total workshop fee of \textbf{\Sexpr{work_fee}} should be paid by bank transfer to the \textbf{JUNE 15, 2016}. Please remember that the transfer \textit{should be done} to the deadline, otherwise your place at workshop will be given to the next person from a reserve list. 
+\noindent The total workshop fee of \textbf{\Sexpr{work_fee}} should be paid by bank transfer to the \textbf{JULY 15, 2016}. Please remember that the transfer \textit{should be done} to the deadline, otherwise your place at workshop will be given to the next person from a reserve list. 
 
-If you are on a reserve list please only pay for the workshop in which you are listed on a regular list. If you are in all workshops on a reserve list please wait for the information about free spaces. Details of the bank account are provided below.
+Please only pay for the workshops in which you are listed on a regular list. If you are in workshops on a reserve list please wait for the information about free spaces. Details of the bank account are provided below.
 
 \begin{itemize}
 \itemsep0pt
