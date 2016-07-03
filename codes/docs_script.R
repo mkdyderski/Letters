@@ -41,6 +41,7 @@ register_presentation <- register %>%
                                       pattern  = ' \\[(5|15) min\\]',
                                       replacement = ''))
 data_input <- register_presentation
+fnames_list <- list()
 
 for (i in 1:nrow(register_presentation)) {
   
@@ -58,13 +59,19 @@ for (i in 1:nrow(register_presentation)) {
   fname <- paste0(gsub('\\s+','_',surname),'_',
                   gsub('\\s+','_',name),'_erum_conference_confirmation.tex')
   fname <- stri_trans_general(fname, "latin-ascii")
-  
+  fnames_list[[i]] <- fname
   knit2pdf(input = '../erum_conference_confirmation.rnw',
            output = fname)
   junk <- dir(path=getwd(), pattern="*.(aux|log|out|tex)") 
   file.remove(junk)
 }
 
+data.frame(fnames = unlist(fnames_list),
+           mails = data_input$email) %>%
+  write.table(file = 'mails_conf.csv',
+            quote=F,
+            row.names = F,
+            col.names=FALSE, sep=",")
 
 # workshop confirmation ---------------------------------------------------
 
@@ -81,6 +88,7 @@ workshp <- erum %>%
 
 
 data_input <- workshp
+fnames_list <- list()
 
 for (i in 1:nrow(data_input)) {
   
@@ -103,7 +111,7 @@ for (i in 1:nrow(data_input)) {
   fname <- paste0(gsub('\\s+','_',surname),'_',
                   gsub('\\s+','_',name),'_erum_workshop_confirmation.tex')
   fname <- stri_trans_general(fname, "latin-ascii")
-  
+  fnames_list[[i]] <- fname
   knit2pdf(input = '../erum_workshop_confirmation.rnw',
            output = fname)
   
@@ -111,7 +119,12 @@ for (i in 1:nrow(data_input)) {
   file.remove(junk)
 }
 
-
+data.frame(fnames = unlist(fnames_list),
+           mails = data_input$email) %>%
+  write.table(file = 'mails_conf.csv',
+              quote=F,
+              row.names = F,
+              col.names=FALSE, sep=",")
 
 # conference conf without presentation  -----------------------------------
 
@@ -138,12 +151,19 @@ for (i in 1:nrow(data_input)) {
   fname <- paste0(gsub('\\s+','_',surname),'_',
                   gsub('\\s+','_',name),'_erum_participation_confirmation.tex')
   fname <- stri_trans_general(fname, "latin-ascii")
-  
+  fnames_list[[i]] <- fname
   knit2pdf(input = '../erum_participation_confirmation.Rnw',
            output = fname)
   junk <- dir(path=getwd(), pattern="*.(aux|log|out|tex)") 
   file.remove(junk)
 }
+
+data.frame(fnames = unlist(fnames_list),
+           mails = data_input$email) %>%
+  write.table(file = 'mails_conf.csv',
+              quote=F,
+              row.names = F,
+              col.names=FALSE, sep=",")
 
 
 ### files with emails and files
