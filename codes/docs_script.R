@@ -1,14 +1,13 @@
 ## script for producing 
 # devtools::install_github("jennybc/googlesheets")
-library(googlesheets)
-library(knitr)
-library(dplyr)
-library(stringi)
-library(lubridate)
+library('googlesheets')
+library('knitr')
+library('dplyr')
+library('stringi')
+library('lubridate')
 
 # read data ---------------------------------------------------------------
 
- 
 dir.create('template/mails') ## invisible at github
 setwd('template/mails')
 
@@ -166,12 +165,7 @@ data.frame(fnames = gsub('\\.tex','\\.pdf',unlist(fnames_list)),
               row.names = F,
               col.names=FALSE, sep=",")
 
-
 ### files with emails and files
 
 #files <- list.files(pattern='*.pdf')
 # file.remove(files)
-
-
-
-
