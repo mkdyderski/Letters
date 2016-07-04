@@ -20,7 +20,6 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[10pt,a4paper]{letter} % Specify the font size (10pt, 11pt and 12pt) and paper size (letterpaper, a4paper, etc)
-
 \usepackage{graphicx} % Required for including pictures
 \usepackage{microtype} % Improves typography
 \usepackage{gfsdidot} % Use the GFS Didot font: http://www.tug.dk/FontCatalogue/gfsdidot/
@@ -141,8 +140,8 @@
 
 \begin{letter} 
 {\Sexpr{name} \Sexpr{surname}\\ 
-\Sexpr{gsub("&", "\\\\&", inst)} \\
-%\Sexpr{city}, \Sexpr{country} \\ 
+\Sexpr{inst} \\
+\Sexpr{city}, \Sexpr{country} \\ 
 \Sexpr{gsub("_", "\\\\_", mail)} \\ 
 }
 
@@ -152,33 +151,9 @@
 
 \opening{Dear Sir/ Madam,}
 
-The eRum 2016 Organizing Committee confirms your registration for the following workshop/s:
+The eRum 2016 Organizing Committee is pleased to inform you that your paper \textbf{\Sexpr{pres_title}} has been selected for the eRum 2016 Conference. The organizing committee has decided that your paper has been selected as a \textbf{\Sexpr{type}}. The conference program is now being prepared and will be published on the conference webpage at the begining of September. 
 
-\begin{itemize}
-<<d, results="asis", echo=FALSE>>=
-if (w == 1) {
-  cat('\\item ', work_time[1],": ")
-    cat('\\begin{itemize}')
-    cat('\\item ', work_names[1], ' -- status: on \\textbf{',work_status[1], '}\n')
-    cat('\\end{itemize}')
-} else {
-  cat('\\item ', work_time[1],": ")
-    cat('\\begin{itemize}')
-    cat('\\item ', work_names[1], ' -- status: on \\textbf{',work_status[1], '}\n')
-    cat('\\end{itemize}')
-  
-  cat('\\item ', work_time[2],": ")
-    cat('\\begin{itemize}')
-    cat('\\item ', work_names[2], ' -- status: on \\textbf{',work_status[2], '}\n')
-    cat('\\end{itemize}')
-}
-@
-\end{itemize}
-
-
-\noindent The total workshop fee of \textbf{\Sexpr{work_fee}} should be paid by bank transfer by \textbf{JULY 15, 2016}. Please remember that the transfer \textit{should be made} before the deadline, otherwise your place in the workshop will be given to the next person on the reserve list. 
-
-Make sure you only pay for the workshops you have been registered in as a regular participant. If your name is on the reserve list, please wait for the confirmation of your registration. Payment details are provided below.
+\noindent The conference fee of 100 PLN / 25 EUR should be paid by bank transfer by \textbf{JULY 15, 2016}. Please remember that after this date the conference fee is 150 PLN / 35 EUR. Payment details are provided below.
 
 \begin{itemize}
 \itemsep0pt
@@ -190,12 +165,12 @@ Make sure you only pay for the workshops you have been registered in as a regula
 \item \textbf{Transfer title}: "Fee for \Sexpr{name} \Sexpr{surname}"
 \end{itemize}
 
-If the conference fee is covered by your institution or/and you need an invoice, please send the following details to the conference e-mail address: name, address, tax payer number of the institution to be invoiced and the name of the person the payment is made for.
+If the conference fee is covered by your institution or/and you need an invoice, please send the following details to the conference e-mail address: name, address, tax payer number of the institution to be invoiced and the name of the person the payment is made for. 
 
-We appreciate your cooperation and remain at your disposal should you require any further information. Questions on registration, accommodation etc. should be sent to the conference email address erum@konf.ue.poznan.pl. 
+We appreciate your cooperation and remain at your disposal should you require any further information. Questions on registration, accommodation etc. should be sent to the Conference email address erum@konf.ue.poznan.pl. 
 
 \closing{Sincerely,}
- 
+
 %----------------------------------------------------------------------------------------
 \begin{center}
 \includegraphics[height=0.6in]{uep}
