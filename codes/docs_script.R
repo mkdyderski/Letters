@@ -120,7 +120,7 @@ for (i in 1:nrow(data_input)) {
 }
 
 data.frame(fnames = gsub('\\.tex','\\.pdf',unlist(fnames_list)),
-           mails = data_input$email) %>%
+           mails = data_input$mail) %>%
   write.table(file = 'mails_work.csv',
               quote=F,
               row.names = F,
