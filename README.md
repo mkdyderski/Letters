@@ -8,7 +8,7 @@ Letters are located in the template folder:
 * erum_workshop_confirmation.Rnw
 * erum_participation_confirmation.Rnw
 
-To compile these documents run `codes/docs_examples.R`. Creation of original documents are based on Google Sheet (Google Form) and require the following packages:
+To compile these documents run `codes/docs_examples.R`. The creation of original documents is based on a Google Sheet (Google Form) and requires the following packages:
 
 ```
 library('googlesheets')
