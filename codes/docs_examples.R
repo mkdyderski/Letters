@@ -17,7 +17,7 @@ work_status <- c('a reserve list (30/25)', 'a regular list')
 
 # paper confirmation -------------------------------------------------
 
-knit2pdf(input = 'template/erum_conference_confirmation.rnw',
+knit2pdf(input = 'template/erum_conference_confirmation.Rnw',
          output = 'template/erum_conference_confirmation.tex')
 
 # workshop confirmation ---------------------------------------------------
