@@ -165,7 +165,7 @@ The eRum 2016 Organizing Committee is pleased to inform you that your paper \tex
 \item \textbf{Transfer title}: "Fee for \Sexpr{name} \Sexpr{surname}"
 \end{itemize}
 
-If the conference fee is covered by your institution or/and you need an invoice, please send the following details to the conference e-mail address: name, address, tax payer number of the institution to be invoiced and the name of the person the payment is made for 
+If the conference fee is covered by your institution or/and you need an invoice, please send the following details to the conference e-mail address: name, address, tax payer number of the institution to be invoiced and the name of the person the payment is made for. 
 
 We appreciate your cooperation and remain at your disposal should you require any further information. Questions on registration, accommodation etc. should be sent to the Conference email address erum@konf.ue.poznan.pl. 
 
