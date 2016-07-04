@@ -152,7 +152,7 @@
 
 \opening{Dear Sir/ Madam,}
 
-The eRum 2016 Organizing Committee is pleased to inform you have registered for the following workshop/s:
+The eRum 2016 Organizing Committee confirms your registration for the following workshop/s:
 
 \begin{itemize}
 <<d, results="asis", echo=FALSE>>=
@@ -176,9 +176,9 @@ if (w == 1) {
 \end{itemize}
 
 
-\noindent The total workshop fee of \textbf{\Sexpr{work_fee}} should be paid by bank transfer to the \textbf{JULY 15, 2016}. Please remember that the transfer \textit{should be done} to the deadline, otherwise your place at workshop will be given to the next person from a reserve list. 
+\noindent The total workshop fee of \textbf{\Sexpr{work_fee}} should be paid by bank transfer by \textbf{JULY 15, 2016}. Please remember that the transfer \textit{should be made} before the deadline, otherwise your place in the workshop will be given to the next person on the reserve list. 
 
-Please only pay for the workshops in which you are listed on a regular list. If you are in workshops on a reserve list please wait for the information about free spaces. Details of the bank account are provided below.
+Make sure you only pay for the workshops you have been registered in as a regular participant. If your name is on the reserve list, please wait for the confirmation of your registration. Payment details are provided below.
 
 \begin{itemize}
 \itemsep0pt
@@ -190,12 +190,12 @@ Please only pay for the workshops in which you are listed on a regular list. If 
 \item \textbf{Transfer title}: "Fee for \Sexpr{name} \Sexpr{surname}"
 \end{itemize}
 
-If the conference fee will be covered by the your institution or/and you need an invoice please send the following details: name, address, tax payer number and for whom the payment will be made, to the conference e-mail. 
+If the conference fee is covered by your institution or/and you need an invoice, please send the following details to the conference e-mail address: name, address, tax payer number of the institution to be invoiced and the name of the person the payment is made for
 
-We thank you in advance for your co-operation and remain at your disposal should you require any further information. Questions on registration, accommodation etc. should be mailed to the Conference office mailbox erum@konf.ue.poznan.pl. 
+We appreciate your cooperation and remain at your disposal should you require any further information. Questions on registration, accommodation etc. should be sent to the conference email address erum@konf.ue.poznan.pl. 
 
 \closing{Sincerely,}
-
+ 
 %----------------------------------------------------------------------------------------
 \begin{center}
 \includegraphics[height=0.6in]{uep}

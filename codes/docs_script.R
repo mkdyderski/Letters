@@ -66,7 +66,7 @@ for (i in 1:nrow(register_presentation)) {
   file.remove(junk)
 }
 
-data.frame(fnames = unlist(fnames_list),
+data.frame(fnames = gsub('\\.tex','\\.pdf',unlist(fnames_list)),
            mails = data_input$email) %>%
   write.table(file = 'mails_conf.csv',
             quote=F,
@@ -119,9 +119,9 @@ for (i in 1:nrow(data_input)) {
   file.remove(junk)
 }
 
-data.frame(fnames = unlist(fnames_list),
+data.frame(fnames = gsub('\\.tex','\\.pdf',unlist(fnames_list)),
            mails = data_input$email) %>%
-  write.table(file = 'mails_conf.csv',
+  write.table(file = 'mails_work.csv',
               quote=F,
               row.names = F,
               col.names=FALSE, sep=",")
@@ -134,6 +134,7 @@ register_participation <- register %>%
          when != 'Participation only in workshop/s (not the conference)')
 
 data_input <- register_participation
+fnames_list <- list()
 
 for (i in 1:nrow(data_input)) {
   
@@ -158,9 +159,9 @@ for (i in 1:nrow(data_input)) {
   file.remove(junk)
 }
 
-data.frame(fnames = unlist(fnames_list),
+data.frame(fnames = gsub('\\.tex','\\.pdf',unlist(fnames_list)),
            mails = data_input$email) %>%
-  write.table(file = 'mails_conf.csv',
+  write.table(file = 'mails_part.csv',
               quote=F,
               row.names = F,
               col.names=FALSE, sep=",")

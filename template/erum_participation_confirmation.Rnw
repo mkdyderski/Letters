@@ -152,9 +152,9 @@
 
 \opening{Dear Sir/ Madam,}
 
-The eRum 2016 Organizing Committee is pleased to inform your participation has been accepted. The conference program is now being prepared and will be published on the conference webpage in the begining of September.
+The eRum 2016 Organizing Committee is pleased to inform that your participation has been accepted. The conference program is now being prepared and will be published on the conference webpage at the begining of September.
 
-\noindent The conference fee of 100 PLN / 25 EUR should be paid by bank transfer to the \textbf{JULY 15, 2016}. Please remember that after this date the conference fee is 150 PLN / 35 EUR. Details of are provided below.
+\noindent The conference fee of 100 PLN / 25 EUR should be paid by bank transfer by \textbf{JULY 15, 2016}. Please remember that after this date the conference fee is 150 PLN / 35 EUR. Payment details are provided below.
 
 \begin{itemize}
 \itemsep0pt
@@ -166,9 +166,9 @@ The eRum 2016 Organizing Committee is pleased to inform your participation has b
 \item \textbf{Transfer title}: "Fee for \Sexpr{name} \Sexpr{surname}"
 \end{itemize}
 
-If the conference fee will be covered by the your institution or/and you need an invoice please send the following details: name, address, tax payer number and for whom the payment will be made, to the conference e-mail. 
+If the conference fee is covered by your institution or/and you need an invoice, please send the following details to the conference e-mail address: name, address, tax payer number of the institution to be invoiced and the name of the person the payment is made for
 
-We thank you in advance for your co-operation and remain at your disposal should you require any further information. Questions on registration, accommodation etc. should be mailed to the Conference office mailbox erum@konf.ue.poznan.pl. 
+We appreciate your cooperation and remain at your disposal should you require any further information. Questions on registration, accommodation etc. should be sent to the Conference email address erum@konf.ue.poznan.pl. 
 
 \closing{Sincerely,}
 
