@@ -1,6 +1,6 @@
 ---
 title: "eRum 2016 -- confirmation"
-author: "European R Users Meeting 2016 \ 12-14 of October \ Poznan"
+author: "European R Users Meeting 2016, 12-14 of October, Poznan"
 date: "Poznan, July 2016"
 output:
   html_document: default
@@ -15,19 +15,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Dear `name surname`,
 
-
 The eRum 2016 Organizing Committee is pleased to inform you that your abstract ` abstract` has been selected for the eRum 2016 Conference.
 
 We thank you in advance for your co-operation and remain at your disposal should you require any further information. Questions or comments concerning the Conference Programme should be mailed to erum@konf.ue.poznan.pl, whilst questions on registration, accommodation etc. should be mailed to the Conference office mailbox erum@konf.ue.poznan.pl.
 
-
-
-
-We look forward to meeting you in Madrid! 
-
+We look forward to meeting you in Poznan! 
 
 Sincerely,
-
 
 dr Maciej Beręsewicz
 

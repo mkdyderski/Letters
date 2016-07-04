@@ -1,22 +1,19 @@
 ### examples
 
-
 name <- 'Adam'
 surname <- 'Student'
-inst <- 'Poznan University of Economics and Bisiness'
+inst <- 'Poznan University of Economics and Business'
 city <- 'Poznan'
 country <- 'Poland'
 mail <- 'some-mail@domain.com'
-pres_title <- 'the title of the presentation'
+pres_title <- 'The title of the presentation'
 type <- 'presentation'
 
 w <- 2
 work_fee <- ifelse(w == 1,'200 PLN / 50 EUR', '400 PLN / 100 EUR')
-work_names <- c('workshop 1', 'workshop2')
+work_names <- c('workshop 1', 'workshop 2')
 work_time <- c('morning', 'afternoon')
 work_status <- c('a reserve list (30/25)', 'a regular list')
-
-
 
 # paper confirmation -------------------------------------------------
 
@@ -35,5 +32,3 @@ knit2pdf(input = 'erum_participation_confirmation.Rnw',
 
 junk <- dir(path=getwd(), pattern="*.(aux|log|out|tex)") 
 file.remove(junk)
-
-
