@@ -1,13 +1,14 @@
 ### examples
+library(knitr)
 
-name <- 'Adam'
-surname <- 'Student'
-inst <- 'Poznan University of Economics and Business'
-city <- 'Poznan'
-country <- 'Poland'
-mail <- 'some-mail@domain.com'
-pres_title <- 'The title of the presentation'
-type <- 'presentation'
+name <- 'xxx'
+surname <- 'xxx'
+inst <- 'xxxxxx'
+city <- 'xxx'
+country <- 'xxx'
+mail <- 'xxx@xxx.xxx'
+pres_title <- 'xxx'
+type <- 'a regular talk'
 
 w <- 2
 work_fee <- ifelse(w == 1,'200 PLN / 50 EUR', '400 PLN / 100 EUR')
