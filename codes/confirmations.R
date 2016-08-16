@@ -40,9 +40,14 @@ platnosci_doc <- platnosci %>%
         group_by(workshop_afternoon) %>%
         mutate(workshop_afternoon_pos = row_number())  %>%
         ungroup() %>% 
+        mutate(workshop_morning_pos = 
+                            ifelse(is.na(workshop_morning),NA,workshop_morning_pos),
+                    workshop_afternoon_pos = 
+                            ifelse(is.na(workshop_afternoon),NA,workshop_afternoon_pos)) %>%
         mutate(workshop_payment = 
-                       ifelse(workshop_morning_pos <=25,200,0) + 
-                       ifelse(workshop_afternoon_pos <=25,200,0),
+                       ifelse(workshop_morning_pos <= 25,200,0) + 
+                       ifelse(workshop_afternoon_pos <= 25,200,0),
+               workshop_payment = ifelse(is.na(workshop_payment),0,workshop_payment),
                conference_payment = ifelse(!workshop_only,100,0),
                total_payment = workshop_payment + conference_payment)
 
@@ -51,3 +56,4 @@ platnosci_doc %>%
         select(first_name:institution,total_payment) %>%
         arrange(last_name,first_name)
 
+rio::export(x = platnosci_doc, file = '../Opłaty/platnosci_przetworzone.xlsx')
